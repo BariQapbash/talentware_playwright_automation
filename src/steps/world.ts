@@ -6,7 +6,9 @@ export let context: BrowserContext;
 export let page: Page;
 
 Before(async function () {
-  browser = await chromium.launch({ headless: false }); // 设置为 false 可以看到浏览器运行过程
+  // Run headless in CI environments (GitHub Actions), headed locally for debugging
+  const isCI = Boolean(process.env.CI);
+  browser = await chromium.launch({ headless: isCI });
   context = await browser.newContext();
   page = await context.newPage();
 });
