@@ -33,7 +33,7 @@ jobs:
           BASE_URL: ${{ secrets.BASE_URL }}
           TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
           TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
-        run: npx cucumber-js --tags "@login-check"
+        run: npx cucumber-js --tags "@automated"
 
       - name: Upload Cucumber HTML Report
         if: always() # Upload report even if tests fail
