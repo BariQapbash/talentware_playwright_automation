@@ -8,14 +8,14 @@ Feature: Search Colleagues
     When I click on the "Search colleagues" button
     Then I should see the "Search colleagues" page
 
-  @automated @smoke 
+  @automated @smoke
   Scenario: Search colleagues by partial name and submit with Search button
     When I enter a partial name "mAr" in the "nameOrRole" field
     And I click the "Search" button
     Then colleague cards should contain "mAr" 
     And the colleague counter above should reflect the current results
 
-   @automated @smoke 
+   @automated @smoke
   Scenario: Search colleagues by partial job title and submit with Search button
     When I enter "tEs" in the "nameOrRole" field
     And I click the "Search" button
@@ -42,7 +42,7 @@ Feature: Search Colleagues
     And the colleague counter above should reflect the current results
 
 
-  @automated @smoke 
+  @automated @smoke
   Scenario: Open a colleague public profile from a result card
     When I enter "Bari Qapbash" in the "nameOrRole" field
     And I click the "Search" button
@@ -72,7 +72,7 @@ Feature: Search Colleagues
     When I navigate to the next page
     Then subsequent colleague cards should be displayed
 
-  @manual @boundary 
+  @manual 
   Scenario: Current logged-in user is marked with the "You" badge in results
     When I search for my own name
     Then my colleague card should display the "Your Profile" label
